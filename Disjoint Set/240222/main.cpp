@@ -7,8 +7,7 @@ struct DisjointSet
 	vector<int> parent, rank;
 	DisjointSet(int n) : parent(n), rank(n, 1)
 	{
-		for (int i = 0; i < n; ++i)
-			parent[i] = i;
+		iota(parent.begin(), parent.end(), 0);
 	}
 	int Find(int u)
 	{
@@ -23,4 +22,5 @@ struct DisjointSet
 		parent[u] = v;
 		if (rank[u] == rank[v]) ++rank[v];
 	}
+
 };
