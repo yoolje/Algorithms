@@ -11,8 +11,7 @@ struct DisjointSet
 	}
 	int Find(int u)
 	{
-		if (u == parent[u]) return u;
-		return parent[u] = Find(parent[u]);
+		return v == parent[v] ? v : parent[v] = Find(parent[v]);
 	}
 	void Union(int u, int v)
 	{
@@ -24,3 +23,4 @@ struct DisjointSet
 	}
 
 };
+
